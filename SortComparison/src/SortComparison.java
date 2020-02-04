@@ -65,10 +65,9 @@
      *
      */
     static double [] quickSort (double a[]){
-	
-		 //todo: implement the sort
-
-    }//end quicksort
+    	
+    	}
+    //end quicksort
 
     /**
      * Sorts an array of doubles using Merge Sort.
