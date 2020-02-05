@@ -135,7 +135,7 @@
 
     static double[] mergeSortIterative (double a[]) {
 
-		 //todo: implement the sort
+		 
 	
     }//end mergesortIterative
     
@@ -149,18 +149,64 @@
      * @return after the method returns, the array must be in ascending sorted order.
      */
     static double[] mergeSortRecursive (double a[]) {
-    	
-
-    	//todo: implement the sort
-	
-   }//end mergeSortRecursive
-    	
+        if(a.length > 1) 
+        { 
+            int mid = a.length / 2; 
+  
+            // Split left part 
+            double[] left = new double[mid]; 
+            for(int i = 0; i < mid; i++) 
+            { 
+                left[i] = a[i]; 
+            } 
+              
+            // Split right part 
+            double[] right = new double[a.length - mid]; 
+            for(int i = mid; i < a.length; i++) 
+            { 
+                right[i - mid] = a[i]; 
+            } 
+            mergeSortRecursive(left); 
+            mergeSortRecursive(right); 
+  
+            int i = 0; 
+            int j = 0; 
+            int k = 0; 
+  
+            // Merge left and right arrays 
+            while(i < left.length && j < right.length) 
+            { 
+                if(left[i] < right[j]) 
+                { 
+                    a[k] = left[i]; 
+                    i++; 
+                } 
+                else
+                { 
+                    a[k] = right[j]; 
+                    j++; 
+                } 
+                k++; 
+            } 
+            // Collect remaining elements 
+            while(i < left.length) 
+            { 
+                a[k] = left[i]; 
+                i++; 
+                k++; 
+            } 
+            while(j < right.length) 
+            { 
+                a[k] = right[j]; 
+                j++; 
+                k++; 
+            } 
+        }
+        return a;
+    }  
     
-
-
-   
-
-
+    //end mergeSortRecursive
+    	
     public static void main(String[] args) {
 
         //todo: do experiments as per assignment instructions
