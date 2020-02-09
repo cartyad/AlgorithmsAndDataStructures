@@ -134,11 +134,17 @@
      */
 
     static double[] mergeSortIterative (double a[]) {
-    	Comparable[] aux = new Comparable[a.length];
-    	sort(a,aux,0,a.length-1);
+    	int N = a.length;
+    	double[] aux = new double[a.length];
+    	for(int sz=1;sz<N; sz=sz+sz)
+    	{
+    		for(int lo=0;lo<N-sz; lo+=sz+sz)
+    		{
+    			merge(a,aux,lo,lo+sz-1,Math.min(lo+sz+sz-1, N-1));
+    		}
+    	}
     	return a;
     }//end mergesortIterative
-    public static void sort(Compap)
     
     
     /**
@@ -150,7 +156,8 @@
      */
     static double[] mergeSortRecursive (double a[]) { //Top-Down
     	double [] aux = new double[a.length];
-    	sort(a,aux,0,a.length-1); 
+    	sort(a,aux,0,a.length-1);
+    	return a;
     }  
     private static void sort(double[]a, double[]aux, int lo, int hi)
     {
