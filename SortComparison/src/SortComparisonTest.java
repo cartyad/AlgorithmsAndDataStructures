@@ -33,6 +33,36 @@ public class SortComparisonTest
     	double [] a = null;
     	assertTrue(SortComparison.isEmpty(a));
     }
+    @Test
+    public void testInsertionSortIsEmpty()
+    {
+    	double [] a = null;
+    	assertNull(SortComparison.insertionSort(a));
+    }
+    @Test
+    public void testSelectionSortIsEmpty()
+    {
+    	double [] a = null;
+    	assertNull(SortComparison.selectionSort(a));
+    }
+    @Test
+    public void testQuickSortIsEmpty()
+    {
+    	double [] a = null;
+    	assertNull(SortComparison.quickSort(a));
+    }
+    @Test
+    public void testMergeSortIterativeIsEmpty()
+    {
+    	double [] a = null;
+    	assertNull(SortComparison.mergeSortIterative(a));
+    }
+    @Test
+    public void testMergeSortRecursiveIsEmpty()
+    {
+    	double [] a = null;
+    	assertNull(SortComparison.mergeSortRecursive(a));
+    }
 
 
     // TODO: add more tests here. Each line of code and ech decision in Collinear.java should

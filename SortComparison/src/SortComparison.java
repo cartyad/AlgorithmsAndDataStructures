@@ -27,17 +27,23 @@
      *
      */
 	 static double [] insertionSort (double a[]){
-		 double temp;
-		 for (int i = 1; i < a.length; i++) {
-			 for(int j = i ; j > 0 ; j--){
-				 if(a[j] < a[j-1]){
-					 temp = a[j];
-					 a[j] = a[j-1];
-					 a[j-1] = temp;
+		 if(isEmpty(a))
+		 {
+			 return null;
+		 }
+		 else{
+			 double temp;
+			 for (int i = 1; i < a.length; i++) {
+				 for(int j = i ; j > 0 ; j--){
+					 if(a[j] < a[j-1]){
+						 temp = a[j];
+						 a[j] = a[j-1];
+						 a[j-1] = temp;
+					 }
 				 }
 			 }
+			 return a;
 		 }
-		 return a;
 
 		 //todo: implement the sort
 	 }//end insertionsort
@@ -49,22 +55,26 @@
      * @return array sorted in ascending order
      *
      */
-    static double [] selectionSort (double a[]){
-
-    	double n = a.length;
-    	for (int i = 0; i < n-1; i++)
-    	{
-    	int min_idx = i;
-    	for (int j = i+1; j < n; j++)
-    	if (a[j] < a[min_idx])
-    	min_idx = j;
-    	double temp = a[min_idx];
-    	a[min_idx] = a[i];
-    	a[i] = temp;
-    	}
-    	return a;
-
-    }//end selectionsort
+	 static double [] selectionSort (double a[]){
+		 if(isEmpty(a))
+		 {
+			 return null;
+		 }
+		 else{
+			 double n = a.length;
+			 for (int i = 0; i < n-1; i++)
+			 {
+				 int min_idx = i;
+				 for (int j = i+1; j < n; j++)
+					 if (a[j] < a[min_idx])
+						 min_idx = j;
+				 double temp = a[min_idx];
+				 a[min_idx] = a[i];
+				 a[i] = temp;
+			 }
+			 return a;
+		 }
+	 }//end selectionsort
 
     /**
      * Sorts an array of doubles using Quick Sort.
@@ -73,12 +83,18 @@
      * @return array sorted in ascending order
      *
      */
-    static double [] quickSort (double a[]){
-    	int low=0;
-    	int high=a.length-1;
-    	sort(a,low,high);
-    	return a;
-    	}
+	 static double [] quickSort (double a[]){
+		 if(isEmpty(a))
+		 {
+			 return null;
+		 }
+		 else{
+			 int low=0;
+			 int high=a.length-1;
+			 sort(a,low,high);
+			 return a;
+		 }
+	 }
     static int partition(double arr[], int low, int high) 
     { 
         double pivot = arr[high];  
@@ -143,18 +159,24 @@
      */
 
     static double[] mergeSortIterative (double a[]) {
-    	int N = a.length;
-    	double[] aux = new double[a.length];
-    	for(int sz=1;sz<N; sz=sz+sz)
+    	if(isEmpty(a))
     	{
-    		for(int lo=0;lo<N-sz; lo+=sz+sz)
-    		{
-    			merge(a,aux,lo,lo+sz-1,Math.min(lo+sz+sz-1, N-1));
-    		}
+    		return null;
     	}
-    	return a;
+    	else{
+    		int N = a.length;
+    		double[] aux = new double[a.length];
+    		for(int sz=1;sz<N; sz=sz+sz)
+    		{
+    			for(int lo=0;lo<N-sz; lo+=sz+sz)
+    			{
+    				merge(a,aux,lo,lo+sz-1,Math.min(lo+sz+sz-1, N-1));
+    			}
+    		}
+    		return a;
+    	}
     }//end mergesortIterative
-    
+
     
     /**
      * Sorts an array of doubles using recursive implementation of Merge Sort.
@@ -164,10 +186,16 @@
      * @return after the method returns, the array must be in ascending sorted order.
      */
     static double[] mergeSortRecursive (double a[]) { //Top-Down
-    	double [] aux = new double[a.length];
-    	sort(a,aux,0,a.length-1);
-    	return a;
-    }  
+    	if(isEmpty(a))
+    	{
+    		return null;
+    	}
+    	else{
+    		double [] aux = new double[a.length];
+    		sort(a,aux,0,a.length-1);
+    		return a;
+    	}  
+    }
     private static void sort(double[]a, double[]aux, int lo, int hi)
     {
     	if(hi<=lo) return;
