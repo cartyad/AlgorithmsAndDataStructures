@@ -9,6 +9,15 @@
  */
 
  class SortComparison {
+	 
+	 static boolean isEmpty(double a[])
+		{
+			if(a == null)
+			{
+				return true;
+			}
+			else return false;
+		}
 
     /**
      * Sorts an array of doubles using InsertionSort.
