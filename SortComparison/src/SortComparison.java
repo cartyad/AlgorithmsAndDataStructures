@@ -195,7 +195,7 @@
     		sort(a,aux,0,a.length-1);
     		return a;
     	}  
-    }
+    }	 
     private static void sort(double[]a, double[]aux, int lo, int hi)
     {
     	if(hi<=lo) return;

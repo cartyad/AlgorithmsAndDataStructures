@@ -69,19 +69,70 @@ public class SortComparisonTest
     @Test
     public void testInsertionSort()
     {
-    	double [] a = {0.5, 3.0, 0.1, 6.0, 2.0};
-    	double [] aSorted = {0.1, 0.5, 2.0, 3.0, 6.0};
-    	double [] aNegative = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
-    	double [] aNegativeSorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
-    	double [] aSingle = {0.1};
-    	double [] aSingleSorted = {0.1};
-    	double [] b = SortComparison.insertionSort(a);
-    	double [] bNegative = SortComparison.insertionSort(aNegative);
-    	double [] bSingle = SortComparison.insertionSort(aSingle);
-    	assertArrayEquals(b, aSorted, DELTA);
-    	assertArrayEquals(bNegative, aNegativeSorted, DELTA);
-    	assertArrayEquals(bSingle, aSingleSorted, DELTA);
+    	double [] array1 = {0.5, 3.0, 0.1, 6.0, 2.0};
+    	double [] array1Sorted = {0.1, 0.5, 2.0, 3.0, 6.0};
+    	double [] array2 = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
+    	double [] array2Sorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
+    	double [] array3 = {0.1};
+    	double [] array3Sorted = {0.1};
+    	assertArrayEquals(SortComparison.insertionSort(array1), array1Sorted, DELTA);
+    	assertArrayEquals(SortComparison.insertionSort(array2), array2Sorted, DELTA);
+    	assertArrayEquals(SortComparison.insertionSort(array3), array3Sorted, DELTA);
     }
+    @Test
+    public void testQuickSort()
+    {
+    	double [] array1 = {0.5, 3.0, 0.1, 6.0, 2.0};
+    	double [] array1Sorted = {0.1, 0.5, 2.0, 3.0, 6.0};
+    	double [] array2 = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
+    	double [] array2Sorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
+    	double [] array3 = {0.1};
+    	double [] array3Sorted = {0.1};
+    	assertArrayEquals(SortComparison.quickSort(array1), array1Sorted, DELTA);
+    	assertArrayEquals(SortComparison.quickSort(array2), array2Sorted, DELTA);
+    	assertArrayEquals(SortComparison.quickSort(array3), array3Sorted, DELTA);
+    }
+    @Test
+    public void testMergeSortIterative()
+    {
+    	double [] array1 = {0.5, 3.0, 0.1, 6.0, 2.0};
+    	double [] array1Sorted = {0.1, 0.5, 2.0, 3.0, 6.0};
+    	double [] array2 = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
+    	double [] array2Sorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
+    	double [] array3 = {0.1};
+    	double [] array3Sorted = {0.1};
+    	assertArrayEquals(SortComparison.mergeSortIterative(array1), array1Sorted, DELTA);
+    	assertArrayEquals(SortComparison.mergeSortIterative(array2), array2Sorted, DELTA);
+    	assertArrayEquals(SortComparison.mergeSortIterative(array3), array3Sorted, DELTA);
+    }
+    @Test
+    public void testMergeSortRecursive()
+    {
+    	double [] array1 = {0.5, 3.0, 0.1, 6.0, 2.0};
+    	double [] array1Sorted = {0.1, 0.5, 2.0, 3.0, 6.0};
+    	double [] array2 = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
+    	double [] array2Sorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
+    	double [] array3 = {0.1};
+    	double [] array3Sorted = {0.1};
+    	assertArrayEquals(SortComparison.mergeSortRecursive(array1), array1Sorted, DELTA);
+    	assertArrayEquals(SortComparison.mergeSortRecursive(array2), array2Sorted, DELTA);
+    	assertArrayEquals(SortComparison.mergeSortRecursive(array3), array3Sorted, DELTA);
+    }
+    @Test
+    public void testSelectionSort()
+    {
+    	double [] array1 = {0.5, 3.0, 0.1, 6.0, 2.0};
+    	double [] array1Sorted = {0.1, 0.5, 2.0, 3.0, 6.0};
+    	double [] array2 = {-0.28, -0.65, -0.32, 0.3, -0.18, -1.0, -0.05};
+    	double [] array2Sorted = {-1.0, -0.65, -0.32,-0.28, -0.18, -0.05, 0.3};
+    	double [] array3 = {0.1};
+    	double [] array3Sorted = {0.1};
+    	assertArrayEquals(SortComparison.selectionSort(array1), array1Sorted, DELTA);
+    	assertArrayEquals(SortComparison.selectionSort(array2), array2Sorted, DELTA);
+    	assertArrayEquals(SortComparison.selectionSort(array3), array3Sorted, DELTA);
+    }
+    
+
 
 
     // TODO: add more tests here. Each line of code and ech decision in Collinear.java should
