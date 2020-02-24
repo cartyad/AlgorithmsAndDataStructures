@@ -1,10 +1,15 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 // -------------------------------------------------------------------------
 
 /**
  *  This class contains static methods that implementing sorting of an array of numbers
  *  using different sort algorithms.
  *
- *  @author
+ *  @author Adam Carty
  *  @version HT 2020
  */
 
@@ -209,11 +214,5 @@
 		return isLess;
 	}
     //end mergeSortRecursive
-    	
-    public static void main(String[] args) {
-
-        //todo: do experiments as per assignment instructions
-    }
-
  }//end class A
 
