@@ -384,6 +384,222 @@ public class SortComparisonTest
     	end=System.nanoTime();
     	difference=end-start;
     	System.out.println(difference);
+    	
+    	
+    	System.out.print("Array Size 100 For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a100);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 100 For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b100);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 100 For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c100);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 100 For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d100);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 100 For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e100);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	
+    	System.out.print("Array Size 1000 For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a1000);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b1000);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c1000);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d1000);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e1000);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	
+      	System.out.print("Array Size 1000 Duplicate For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a1000Duplicate);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Duplicate For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b1000Duplicate);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Duplicate For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c1000Duplicate);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Duplicate For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d1000Duplicate);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Duplicate For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e1000Duplicate);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	
+    	System.out.print("Array Size 1000 Reverse For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a1000Reverse);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Reverse For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b1000Reverse);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Reverse For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c1000Reverse);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Reverse For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d1000Reverse);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Reverse For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e1000Reverse);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	
+    	System.out.print("Array Size 1000 Nearly For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a1000Nearly);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Nearly For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b1000Nearly);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Nearly For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c1000Nearly);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Nearly For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d1000Nearly);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Nearly For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e1000Nearly);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	
+    	System.out.print("Array Size 1000 Sorted For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a1000Sorted);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Sorted For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b1000Sorted);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Sorted For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c1000Sorted);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Sorted For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d1000Sorted);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 1000 Sorted For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e1000Sorted);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
     	   
     }
 
