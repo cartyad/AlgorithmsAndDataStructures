@@ -345,6 +345,45 @@ public class SortComparisonTest
     	d1000Sorted=a1000Sorted;
     	e1000Sorted=a1000Sorted;
     	f1000Sorted=a1000Sorted;
+    	
+    	double start=0;
+    	double end=0;
+    	double difference=0;
+    	 
+    	System.out.print("Array Size 10 For Insertion Sort:");
+    	start =System.nanoTime();
+    	SortComparison.insertionSort(a10);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 10 For Selection Sort:");
+    	start =System.nanoTime();
+    	SortComparison.selectionSort(b10);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 10 For Quick Sort:");
+    	start =System.nanoTime();
+    	SortComparison.quickSort(c10);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 10 For Merge Sort Recursive:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortRecursive(d10);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
+    	
+    	System.out.print("Array Size 10 For Merge Sort Iterative:");
+    	start =System.nanoTime();
+    	SortComparison.mergeSortIterative(e10);
+    	end=System.nanoTime();
+    	difference=end-start;
+    	System.out.println(difference);
     	   
     }
 
