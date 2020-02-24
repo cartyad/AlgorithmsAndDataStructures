@@ -157,6 +157,27 @@ public class SortComparisonTest
     	double [] a10 = new double[10]; double [] a100 = new double[100]; double [] a1000 = new double[1000];
     	double [] a1000Duplicate = new double[1000]; double [] a1000Nearly = new double[1000];
     	double []  a1000Reverse = new double[1000]; double [] a1000Sorted = new double[1000];
+    	
+    	double [] b10 = new double[10]; double [] b100 = new double[100]; double [] b1000 = new double[1000];
+    	double [] b1000Duplicate = new double[1000]; double [] b1000Nearly = new double[1000];
+    	double []  b1000Reverse = new double[1000]; double [] b1000Sorted = new double[1000];
+    	
+    	double [] c10 = new double[10]; double [] c100 = new double[100]; double [] c1000 = new double[1000];
+    	double [] c1000Duplicate = new double[1000]; double [] c1000Nearly = new double[1000];
+    	double []  c1000Reverse = new double[1000]; double [] c1000Sorted = new double[1000];
+    	
+    	double [] d10 = new double[10]; double [] d100 = new double[100]; double [] d1000 = new double[1000];
+    	double [] d1000Duplicate = new double[1000]; double [] d1000Nearly = new double[1000];
+    	double []  d1000Reverse = new double[1000]; double [] d1000Sorted = new double[1000];
+    	
+    	double [] e10 = new double[10]; double [] e100 = new double[100]; double [] e1000 = new double[1000];
+    	double [] e1000Duplicate = new double[1000]; double [] e1000Nearly = new double[1000];
+    	double []  e1000Reverse = new double[1000]; double [] e1000Sorted = new double[1000];
+    	
+    	double [] f10 = new double[10]; double [] f100 = new double[100]; double [] f1000 = new double[1000];
+    	double [] f1000Duplicate = new double[1000]; double [] f1000Nearly = new double[1000];
+    	double []  f1000Reverse = new double[1000]; double [] f1000Sorted = new double[1000];
+    	
     	int i=0;
     	try
     	{
@@ -175,6 +196,12 @@ public class SortComparisonTest
     	{
     		e.printStackTrace();
     	}
+    	b10=a10;
+    	c10=a10;
+    	d10=a10;
+    	e10=a10;
+    	f10=a10;
+    	
         
     	try
     	{
@@ -193,7 +220,11 @@ public class SortComparisonTest
     	{
     		e.printStackTrace();
     	}
-    	
+    	b100=a100;
+    	c100=a100;
+    	d100=a100;
+    	e100=a100;
+    	f100=a100;
     	
     	try
     	{
@@ -213,6 +244,11 @@ public class SortComparisonTest
     		e.printStackTrace();
     	}
     	
+    	b1000=a1000;
+    	c1000=a1000;
+    	d1000=a1000;
+    	e1000=a1000;
+    	f1000=a1000;
     	
     	try
     	{
@@ -232,6 +268,11 @@ public class SortComparisonTest
     		e.printStackTrace();
     	}
     	
+    	b1000Duplicate=a1000Duplicate;
+    	c1000Duplicate=a1000Duplicate;
+    	d1000Duplicate=a1000Duplicate;
+    	e1000Duplicate=a1000Duplicate;
+    	f1000Duplicate=a1000Duplicate;
     	
     	try
     	{
@@ -251,6 +292,11 @@ public class SortComparisonTest
     		e.printStackTrace();
     	}
     	
+    	b1000Nearly=a1000Nearly;
+    	c1000Nearly=a1000Nearly;
+    	d1000Nearly=a1000Nearly;
+    	e1000Nearly=a1000Nearly;
+    	f1000Nearly=a1000Nearly;
     	
     	try
     	{
@@ -270,6 +316,11 @@ public class SortComparisonTest
     		e.printStackTrace();
     	}
     	
+    	b1000Reverse=a1000Reverse;
+    	c1000Reverse=a1000Reverse;
+    	d1000Reverse=a1000Reverse;
+    	e1000Reverse=a1000Reverse;
+    	f1000Reverse=a1000Reverse;
     	
     	try
     	{
@@ -288,6 +339,12 @@ public class SortComparisonTest
     	{
     		e.printStackTrace();
     	}
+    	
+    	b1000Sorted=a1000Sorted;
+    	c1000Sorted=a1000Sorted;
+    	d1000Sorted=a1000Sorted;
+    	e1000Sorted=a1000Sorted;
+    	f1000Sorted=a1000Sorted;
     	   
     }
 
