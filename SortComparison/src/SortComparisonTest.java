@@ -1,9 +1,16 @@
 import static org.junit.Assert.assertEquals;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.rules.Stopwatch;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
 //-------------------------------------------------------------------------
 /**
  *  Test class for SortComparison.java
@@ -135,7 +142,7 @@ public class SortComparisonTest
 
 
 
-    // TODO: add more tests here. Each line of code and ech decision in Collinear.java should
+    // TODO: add more tests here. Each line of code and each decision in Collinear.java should
     // be executed at least once from at least one test.
 
     // ----------------------------------------------------------
@@ -147,6 +154,141 @@ public class SortComparisonTest
     public static void main(String[] args)
     {
         //TODO: implement this method
+    	double [] a10 = new double[10]; double [] a100 = new double[100]; double [] a1000 = new double[1000];
+    	double [] a1000Duplicate = new double[1000]; double [] a1000Nearly = new double[1000];
+    	double []  a1000Reverse = new double[1000]; double [] a1000Sorted = new double[1000];
+    	int i=0;
+    	try
+    	{
+    		File file1 = new File("numbers10.txt");
+    		BufferedReader BF1 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF1.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a10[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+        
+    	try
+    	{
+    		File file1 = new File("numbers100.txt");
+    		BufferedReader BF2 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF2.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a100[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	try
+    	{
+    		File file1 = new File("numbers1000.txt");
+    		BufferedReader BF2 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF2.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a1000[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	try
+    	{
+    		File file1 = new File("numbers1000Duplicates.txt");
+    		BufferedReader BF3 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF3.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a1000Duplicate[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	try
+    	{
+    		File file1 = new File("numbersNearlyOrdered1000.txt");
+    		BufferedReader BF4 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF4.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a1000Nearly[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	try
+    	{
+    		File file1 = new File("numbersReverse1000.txt");
+    		BufferedReader BF5 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF5.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a1000Reverse[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	try
+    	{
+    		File file1 = new File("numbersSorted1000.txt");
+    		BufferedReader BF6 = new BufferedReader(new FileReader(file1));
+    		String currentLine;
+    		double doubleCurrentLine;
+    		while((currentLine=BF6.readLine())!=null)
+    		{
+    			doubleCurrentLine=Double.parseDouble(currentLine);
+    			a1000Sorted[i]=doubleCurrentLine;
+    			i++;
+    		}
+    	}
+    	catch(IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	   
     }
 
 }
