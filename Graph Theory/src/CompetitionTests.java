@@ -304,6 +304,6 @@ public class CompetitionTests {
     	int sC = 50;
     	mapD = new CompetitionDijkstra(filename, sA, sB, sC);
     	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
-     }
+    }
     
 }
