@@ -1,7 +1,6 @@
 import java.io.File;
 import java.util.Scanner;
 
-
 /*
  * A Contest to Meet (ACM) is a reality TV contest that sets three contestants at three random
  * city intersections. In order to win, the three contestants need all to meet at any intersection
