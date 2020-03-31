@@ -73,6 +73,7 @@ public class CompetitionTests {
     	int sB = 80;
     	int sC = 60;
     	map = new CompetitionDijkstra(filename, sA, sB, sC);
+    	assertEquals(-1, map.timeRequiredforCompetition());
     }
     
     @Test
@@ -84,6 +85,7 @@ public class CompetitionTests {
     	int sB = 80;
     	int sC = 60;
     	map = new CompetitionFloydWarshall(filename, sA, sB, sC);
+    	assertEquals(-1, map.timeRequiredforCompetition());
     }
     
     @Test
@@ -136,16 +138,16 @@ public class CompetitionTests {
     @Test
     public void testInputB()
     {
-    	CompetitionDijkstra mapD;
-    	CompetitionFloydWarshall mapFW;
+    	CompetitionDijkstra mapDijkstra;
+    	CompetitionFloydWarshall mapFloydWarshall;
     	String filename = "input-B.txt";
     	int sA = 60;
     	int sB = 80;
     	int sC = 50;
-    	mapD = new CompetitionDijkstra(filename, sA, sB, sC);
-    	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
-    	assertEquals(10000, mapD.timeRequiredforCompetition());
-    	assertEquals(10000, mapFW.timeRequiredforCompetition());
+    	mapDijkstra = new CompetitionDijkstra(filename, sA, sB, sC);
+    	mapFloydWarshall = new CompetitionFloydWarshall(filename, sA, sB, sC);
+    	assertEquals(10000, mapDijkstra.timeRequiredforCompetition());
+    	assertEquals(10000, mapFloydWarshall.timeRequiredforCompetition());
     }
     
     @Test
