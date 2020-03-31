@@ -174,7 +174,7 @@ public class CompetitionTests {
     	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
     }
     
-   /* @Test
+    @Test
     public void testInputE()
     {
     	CompetitionDijkstra mapD;
@@ -185,7 +185,7 @@ public class CompetitionTests {
     	int sC = 50;
     	mapD = new CompetitionDijkstra(filename, sA, sB, sC);
     	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
-    }*/
+    }
     
     @Test
     public void testInputF()
@@ -213,7 +213,7 @@ public class CompetitionTests {
     	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
     }
     
-   /* @Test
+    @Test
     public void testInputH()
     {
     	CompetitionDijkstra mapD;
@@ -224,7 +224,7 @@ public class CompetitionTests {
     	int sC = 50;
     	mapD = new CompetitionDijkstra(filename, sA, sB, sC);
     	mapFW = new CompetitionFloydWarshall(filename, sA, sB, sC);
-    }*/
+    }
     
     @Test
     public void testInputI()

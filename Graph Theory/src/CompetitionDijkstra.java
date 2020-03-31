@@ -35,13 +35,11 @@ public class CompetitionDijkstra {
     	this.speedA = sA;
     	this.speedB = sB;
     	this.speedC = sC;
-    	
     	try
     	{
     		File file = new File(filename);
         	Scanner scanner = new Scanner(file);
         	int i = 0;
-        	
         	while(scanner.hasNextLine())
         	{
         		String [] line = scanner.nextLine().trim().split("\\s+");
@@ -96,28 +94,25 @@ public class CompetitionDijkstra {
     	while(true)
     	{
     		int x = -1;
-    		for(int i = 0; i < distanceTo.length; i ++) 
+    		for(int i=0; i<distanceTo.length; i++) 
     		{
     			//Break when new vertice is found
-    			if((sptSet[i] == false) && (distanceTo[v][i] != Integer.MAX_VALUE))
+    			if((sptSet[i]==false)&&(distanceTo[v][i]!=Integer.MAX_VALUE))
     			{
     				x = i;
     				break; 
     			}
     		}
-    		 
-    		if(x == -1)
+    		if(x==-1)
     		{
     			return;
     		}
-    		
     		sptSet[x] = true;
-    		
-    		for(int i = 0; i < distanceTo.length; i++)
+    		for(int i=0; i<distanceTo.length; i++)
     		{
     			if(distanceTo[v][x] + distanceTo[x][i] < distanceTo[v][i])
     			{
-    				distanceTo[v][i] = distanceTo[v][x] + distanceTo[x][i];
+    				distanceTo[v][i]=distanceTo[v][x]+distanceTo[x][i];
     				sptSet[i] = false;
     				edgeTo[v][i] = x;
     			}
@@ -132,10 +127,9 @@ public class CompetitionDijkstra {
     public int timeRequiredforCompetition(){
     	int minSpeed = Math.min(speedC, Math.min( speedA, speedB));
     	double maxDistance = 0.0;
-    	
-    	for(int i = 0; i < distanceTo.length; i++)
+    	for(int i=0; i<distanceTo.length; i++)
     	{
-    		for(int j = 0; j < distanceTo[i].length; j++)
+    		for(int j=0; j<distanceTo[i].length; j++)
     		{
     			if(distanceTo[i][j] == Integer.MAX_VALUE)
     			{
@@ -148,8 +142,7 @@ public class CompetitionDijkstra {
     		}
     	}
     	int maxTime = (int) Math.ceil((maxDistance*1000)/minSpeed);
-    	
-    	if(minSpeed <= 0 || maxDistance == 0)
+    	if(minSpeed<=0||maxDistance==0)
     	{
     		return - 1;
     	}
