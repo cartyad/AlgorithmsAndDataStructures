@@ -34,14 +34,12 @@ public class CompetitionFloydWarshall {
     CompetitionFloydWarshall (String filename, int sA, int sB, int sC){
     	this.speedA = sA;
     	this.speedB = sB;
-    	this.speedC = sC;
-    	
+    	this.speedC = sC; 
     	try
     	{
     		File file = new File(filename);
         	Scanner scanner = new Scanner(file);
         	int i = 0;
-        	
         	while(scanner.hasNextLine())
         	{
         		String [] line = scanner.nextLine().trim().split("\\s+");
@@ -106,30 +104,28 @@ public class CompetitionFloydWarshall {
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
-    	int minSpeed = Math.min(speedC, Math.min( speedA, speedB));
-    	double maxDistance = 0.0;
-    	
-    	for(int i = 0; i < distanceTo.length; i++)
+    	int minimumSpeed = Math.min(speedC, Math.min( speedA, speedB));
+    	double maximumDistance = 0.0;
+    	for(int j=0; j<distanceTo.length; j++)
     	{
-    		for(int j = 0; j < distanceTo[i].length; j++)
+    		for(int i=0; i<distanceTo[j].length; i++)
     		{
-    			if(distanceTo[i][j] == Integer.MAX_VALUE)
+    			if(distanceTo[j][i] == Integer.MAX_VALUE)
     			{
     				return - 1;
     			}
-    			else if(distanceTo[i][j] > maxDistance)
+    			else if(distanceTo[j][i] > maximumDistance)
     			{
-    				maxDistance = distanceTo[i][j];
+    				maximumDistance = distanceTo[j][i];
     			}
     		}
     	}
-    	int maxTime = (int) Math.ceil((maxDistance*1000)/minSpeed);
-    	
-    	if(minSpeed <= 0 || maxDistance == 0)
+    	int maximumTime = (int) Math.ceil((maximumDistance*1000)/minimumSpeed);
+    	if(minimumSpeed<=0||maximumDistance==0)
     	{
-    		return -1;
+    		return - 1;
     	}
-    	return maxTime;
+    	return maximumTime;
     }
 
 }
