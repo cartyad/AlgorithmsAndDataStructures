@@ -19,6 +19,7 @@ import java.util.Scanner;
  */
 
 public class CompetitionDijkstra {
+	
 	public String filename;
 	public int speedA;
 	public int speedB;
@@ -32,26 +33,34 @@ public class CompetitionDijkstra {
      * @param sA, sB, sC: speeds for 3 contestants
     */
     CompetitionDijkstra (String filename, int sA, int sB, int sC){
+    	
     	this.speedA = sA;
     	this.speedB = sB;
     	this.speedC = sC;
+    	
     	try
     	{
+    		
     		File file = new File(filename);
         	Scanner scanner = new Scanner(file);
         	int i = 0;
+        	
         	while(scanner.hasNextLine())
         	{
         		String [] line = scanner.nextLine().trim().split("\\s+");
+        		
         		if(i == 0)	
         		{
+        			
         			distanceTo = new double[Integer.parseInt(line[i])][Integer.parseInt(line[i])];
             		edgeTo = new int[Integer.parseInt(line[i])][Integer.parseInt(line[i])];
             		
             		for(int j = 0; j < distanceTo.length; j++)
             		{
+            			
             			for(int k = 0; k < distanceTo[j].length; k++)
             			{
+            				
             				distanceTo[j][k] = Integer.MAX_VALUE;
             				if(j == k)
             				{
@@ -60,10 +69,12 @@ public class CompetitionDijkstra {
             			}	
             		}
             	}
+        		
         		else if(i == 1)
         		{
         			edgeCount = Integer.parseInt(line[i - 1]);
         		}
+        		
         		else
         		{
         			distanceTo[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = Double.parseDouble(line[2]);
@@ -78,6 +89,7 @@ public class CompetitionDijkstra {
         	}
         	scanner.close();
     	}
+    	
     	catch(Exception x)
     	{
     		distanceTo = new double[0][0];
@@ -88,8 +100,10 @@ public class CompetitionDijkstra {
 
     public void shortestPath(int v)
     {
+    	
     	boolean [] a = new boolean[distanceTo.length];
     	a[v] = true;
+    	
     	while(true)
     	{
     		int x = -1;
@@ -106,10 +120,13 @@ public class CompetitionDijkstra {
     			return;
     		}
     		a[x] = true;
+    		
     		for(int i=0; i<distanceTo.length; i++)
     		{
+    			
     			if(distanceTo[v][x] + distanceTo[x][i] < distanceTo[v][i])
     			{
+    				
     				distanceTo[v][i]=distanceTo[v][x]+distanceTo[x][i];
     				a[i] = false;
     				edgeTo[v][i] = x;
@@ -123,30 +140,38 @@ public class CompetitionDijkstra {
     * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
+    	
     	if(speedC<50||speedC>100)
     	{
     		return -1;
     	}
+    	
     	if(speedB<50||speedB>100)
     	{
     		return -1;
     	}
+    	
     	if(speedA<50||speedA>100)
     	{
     		return -1;
     	}
+    	
     	int minimumSpeed = Math.min(speedC, Math.min( speedA, speedB));
     	double maximumDistance = 0.0;
+    	
     	for(int j=0; j<distanceTo.length; j++)
     	{
+    		
     		for(int i=0; i<distanceTo[j].length; i++)
     		{
+    			
     			if(distanceTo[j][i] > maximumDistance)
     			{
     				maximumDistance = distanceTo[j][i];
     			}
     		}
     	}
+    	
     	int maximumTime = (int) Math.ceil((maximumDistance*1000)/minimumSpeed);
     	if(maximumDistance==0||maximumDistance==Integer.MAX_VALUE)
     	{

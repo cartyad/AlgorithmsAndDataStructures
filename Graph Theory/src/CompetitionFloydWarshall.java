@@ -32,19 +32,26 @@ public class CompetitionFloydWarshall {
      * @param sA, sB, sC: speeds for 3 contestants
      */
     CompetitionFloydWarshall (String filename, int sA, int sB, int sC){
+    	
     	this.speedA = sA;
     	this.speedB = sB;
     	this.speedC = sC; 
+    	
     	try
     	{
     		File file = new File(filename);
         	Scanner scanner = new Scanner(file);
-        	int i = 0;
+        	
+            int i = 0;
+            
         	while(scanner.hasNextLine())
         	{
+        		
         		String [] line = scanner.nextLine().trim().split("\\s+");
+        		
         		if(i == 0)	
         		{
+        			
         			distanceTo = new double[Integer.parseInt(line[i])][Integer.parseInt(line[i])];
             		edgeTo = new int[Integer.parseInt(line[i])][Integer.parseInt(line[i])];
             		
@@ -60,20 +67,24 @@ public class CompetitionFloydWarshall {
             			}	
             		}
             	}
+        		
         		else if(i == 1)
         		{
         			edgeCount = Integer.parseInt(line[i - 1]);
         		}
+        		
         		else
         		{
         			distanceTo[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = Double.parseDouble(line[2]);
         			edgeTo[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = Integer.parseInt(line[0]);
         		}
+        		
         		i++;	
         	}
         	
         	scanner.close();
     	}
+    	
     	catch(Exception x)
     	{
     		distanceTo = new double[0][0];
@@ -81,20 +92,27 @@ public class CompetitionFloydWarshall {
     		return;
     	}
     	
-    	//Floyd-Warshall Shortest Path
-    	for(int i = 0; i <distanceTo.length; i++)
+    	for(int j = 0; j <distanceTo.length; j++)
     	{
-    		for(int j = 0; j < distanceTo.length; j++)
+    		
+    		for(int k = 0; k < distanceTo.length; k++)
     		{
-    			for(int k = 0; k < distanceTo.length; k++)
+    			
+    			for(int i = 0; i < distanceTo.length; i++)
     			{
-    				if(distanceTo[j][i] + distanceTo[i][k] < distanceTo[j][k])
+    				
+    				if(distanceTo[k][j] + distanceTo[j][i] < distanceTo[k][i])
     				{
-    					distanceTo[j][k] = distanceTo[j][i] + distanceTo[i][k];
-    					edgeTo[j][k] = i;
+    					
+    					distanceTo[k][i] = distanceTo[k][j] + distanceTo[j][i];
+    					edgeTo[k][i] = j;
+    				
     				}
+    				
     			}
+    			
     		}
+    		
     	}
     	
     }
@@ -104,30 +122,40 @@ public class CompetitionFloydWarshall {
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
+    	
     	if(speedC<50||speedC>100)
     	{
     		return -1;
     	}
+    	
     	if(speedB<50||speedB>100)
     	{
     		return -1;
     	}
+    	
     	if(speedA<50||speedA>100)
     	{
     		return -1;
     	}
+    	
     	int minimumSpeed = Math.min(speedC, Math.min( speedA, speedB));
     	double maximumDistance = 0.0;
+    	
     	for(int j=0; j<distanceTo.length; j++)
     	{
+    		
     		for(int i=0; i<distanceTo[j].length; i++)
     		{
+    			
     			if(distanceTo[j][i] > maximumDistance)
     			{
     				maximumDistance = distanceTo[j][i];
     			}
+    			
     		}
+    		
     	}
+    	
     	int maximumTime = (int) Math.ceil((maximumDistance*1000)/minimumSpeed);
     	if(maximumDistance==0||maximumDistance==Integer.MAX_VALUE)
     	{
