@@ -104,28 +104,35 @@ public class CompetitionFloydWarshall {
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
+    	if(speedC<50||speedC>100)
+    	{
+    		return -1;
+    	}
+    	if(speedB<50||speedB>100)
+    	{
+    		return -1;
+    	}
+    	if(speedA<50||speedA>100)
+    	{
+    		return -1;
+    	}
     	int minimumSpeed = Math.min(speedC, Math.min( speedA, speedB));
     	double maximumDistance = 0.0;
     	for(int j=0; j<distanceTo.length; j++)
     	{
     		for(int i=0; i<distanceTo[j].length; i++)
     		{
-    			if(distanceTo[j][i] == Integer.MAX_VALUE)
-    			{
-    				return - 1;
-    			}
-    			else if(distanceTo[j][i] > maximumDistance)
+    			if(distanceTo[j][i] > maximumDistance)
     			{
     				maximumDistance = distanceTo[j][i];
     			}
     		}
     	}
     	int maximumTime = (int) Math.ceil((maximumDistance*1000)/minimumSpeed);
-    	if(minimumSpeed<=0||maximumDistance==0)
+    	if(maximumDistance==0||maximumDistance==Integer.MAX_VALUE)
     	{
     		return - 1;
     	}
     	return maximumTime;
     }
-
 }
